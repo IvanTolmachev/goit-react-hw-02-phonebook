@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 import { Form, Label, Input, AddBtn } from './ContactForm.styled';
+import InputMask from 'react-input-mask';
 
 export class ContactForm extends Component {
   state = {
@@ -39,7 +40,9 @@ export class ContactForm extends Component {
 
         <Label>
           Number
-          <Input
+          <InputMask
+            className="input-tel"
+            mask="999-99-99"
             type="tel"
             name="number"
             placeholder="777-77-77"
@@ -50,6 +53,7 @@ export class ContactForm extends Component {
             required
           />
         </Label>
+
         <AddBtn type="submit">Add contact</AddBtn>
       </Form>
     );
