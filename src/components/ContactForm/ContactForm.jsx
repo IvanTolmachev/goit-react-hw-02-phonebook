@@ -19,7 +19,13 @@ export class ContactForm extends Component {
     }
     const { name, number } = this.state;
     this.props.onAddContacts({ name, number });
+    this.reset();
   };
+
+  reset = () => {
+    this.setState({ name: '', number: '' });
+  };
+
   render() {
     const { number, name } = this.state;
     return (
